@@ -1,248 +1,293 @@
 :root {
   /* ===============================
-    1. KOLORY BAZOWE (Z LOGO)
+    1. KOLORY BAZOWE
      =============================== */
-  --primary: #e14f4f; /* Koralowy/czerwony z nazwy i ikony */
-  --secondary: #fbcf8e; /* Złoty/żółty z błysków nad trzepaczką */
-  --dark: #4a4a4a; /* Ciemny grafit z tagu .pl i dopisku */
-  --light: #ffffff; /* Czysty biały na główne tło sekcji i kart */
+
+  --primary: #e14f4f;
+  --primary-hover: #c73c3c;
+
+  --secondary: #f4b860;
+  --secondary-hover: #e6a64c;
+
+  --dark: #3a3a3a;
+  --light: #ffffff;
+
+  --off-white: #faf7f2;
+  --border-light: #e8e4df;
 
   /* ===============================
-    2. WARIANTY KOLORÓW I TŁA
+    2. TŁA
      =============================== */
-  --primary-hover: #c0392b; /* Ciemniejszy odcień primary dla najechania myszką */
-  --off-white: #faf8f5; /* Bardzo ciepły odcień bieli na ogólne tło strony (pozostałe 90%) */
-  --border-light: #e0e0e0; /* Subtelny szary na obramowania */
-  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.04); /* Delikatny cień na karty */
+
+  --bg-page: var(--off-white);
+  --bg-card: var(--light);
+  --bg-section-accent: #fff4e2;
 
   /* ===============================
-    3. ZASTOSOWANIE W UI (MAPOWANIE)
-    To są zmienne, których używasz w kodzie CSS!
+    3. TEKST
      =============================== */
 
-  /* --- TŁA (BACKGROUNDS) --- */
-  --bg-page: var(--off-white); /* Ogólne tło całej strony */
-  --bg-card: var(--light); /* Tło kart z przepisami, sekcji itp. */
-  --bg-section-accent: #fff9ee; /* Subtelny akcent tła (np. dla nagłówka kategorii) */
+  --text-title: var(--primary);
+  --text-heading: #2d2d2d;
+  --text-body: #555;
+  --text-muted: #8c8c8c;
+  --text-on-accent: #ffffff;
 
-  /* --- TEKST (TEXT) --- */
-  --text-title: var(--primary); /* Główny tytuł strony, logotyp */
-  --text-heading: #2d3436; /* Nagłówki sekcji (H1, H2) - ciemniejszy odcień dark */
-  --text-body: var(--dark); /* Główna treść przepisu, składniki */
-  --text-muted: #8c8c8c; /* Subtelniejszy tekst (podtytuły, daty) */
-  --text-on-accent: var(--light); /* Tekst na przyciskach i nagłówkach marki */
+  /* ===============================
+    4. LINKI I PRZYCISKI
+     =============================== */
 
-  /* --- INTERAKTYWNE (LINKI & PRZYCISKI) --- */
   --link-color: var(--primary);
   --link-hover-color: var(--primary-hover);
+
   --btn-primary-bg: var(--primary);
-  --btn-primary-text: var(--light);
+  --btn-primary-text: #ffffff;
   --btn-primary-hover-bg: var(--primary-hover);
 
-  /* --- INNE (MISC) --- */
-  --radius: 20px; /* Zaokrąglenie rogów */
+  /* ===============================
+    5. UI
+     =============================== */
+
+  --radius: 18px;
+
+  --shadow-light: 0 4px 14px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.12);
+
+  /* ===============================
+    6. SPACING SYSTEM
+     =============================== */
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
 }
-* {
+
+/* ===============================
+  GLOBAL
+   =============================== */
+
+*,
+*::before,
+*::after {
   margin: 0;
-}
-html {
-  font-family: Roboto, Arial;
+  padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+/* ===============================
+  IMAGES
+   =============================== */
+
 img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  display: block;
 }
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  background-color: var(--bg-page);
-  color: var(--text-body);
-}
+
+/* ===============================
+  CONTAINER
+   =============================== */
+
 .container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: var(--space-md);
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  width: 70%;
-  gap: 0.3rem;
-  margin: 1rem;
+  gap: var(--space-lg);
 }
+
+/* ===============================
+  HEADER
+   =============================== */
+
 header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: var(--space-md);
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
   position: sticky;
   top: 0;
   z-index: 100;
-  justify-content: space-between;
-  padding: 1rem;
-  align-items: center;
-  background-color: #ffffff;
-  border-radius: var(--radius);
-  width: 100%;
-  box-shadow: var(--shadow-light);
-  gap: 2rem;
+  gap: var(--space-md);
 }
+
 .name {
   font-weight: 900;
 }
-.logo-div-other {
-  display: flex;
-  justify-content: space-around;
-  align-items: end;
-  min-width: 20%;
-  font-weight: 700;
-  flex-wrap: wrap;
-}
-.header-a {
-  padding: 0.5rem;
-  text-decoration: none;
-  color: var(--dark);
-  border-radius: var(--radius);
-  transition:
-    color 0.4s ease,
-    background-color 0.4s ease;
-}
-.header-a:hover {
-  color: var(--light);
-  background-color: var(--primary);
-  border-radius: var(--radius);
-}
+
 .logo {
   text-decoration: none;
-  color: #e14f4f;
+  color: var(--text-title);
   font-weight: 900;
+  font-size: 1.3rem;
 }
 
-main {
+.logo-div-other {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  flex-direction: column;
-  padding: 1rem;
-  border-radius: var(--radius);
-  background-color: var(--light);
-  box-shadow: var(--shadow-light);
+  gap: var(--space-md);
 }
+
+.header-a {
+  padding: 6px 12px;
+  text-decoration: none;
+  color: var(--text-body);
+  border-radius: var(--radius);
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+.header-a:hover {
+  background: var(--primary);
+  color: var(--light);
+}
+
+/* ===============================
+  MAIN
+   =============================== */
+
+main {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* ===============================
+  FILTER
+   =============================== */
 
 .filter {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  width: 100%;
-  gap: 1rem;
-  padding: 1rem;
+  align-items: center;
+  gap: var(--space-md);
 }
 
 .filter-options {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
   flex-wrap: wrap;
-  width: 100%;
+  justify-content: center;
+  gap: var(--space-sm);
 }
 
 .filter-btn {
-  padding: 0.5rem;
-  text-decoration: none;
-  color: var(--dark);
+  padding: 8px 14px;
   border: 1px solid var(--border-light);
-  background-color: var(--bg-card);
+  background: var(--bg-card);
   border-radius: var(--radius);
-  transition:
-    transform 0.4s ease,
-    background-color 0.4s ease;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-body);
+  transition: all 0.25s ease;
 }
 
 .filter-btn:hover {
-  background-color: var(--secondary);
+  background: var(--secondary);
   border-color: var(--secondary);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
+
+/* ===============================
+  FOOD GRID
+   =============================== */
 
 .food-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  gap: var(--space-lg);
   width: 100%;
 }
+
+/* ===============================
+  FOOD CARD
+   =============================== */
+
 .food-card-div {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  background-color: var(--bg-card);
+  background: var(--bg-card);
   border-radius: var(--radius);
-  width: 100%;
   overflow: hidden;
   box-shadow: var(--shadow-light);
-  box-sizing: border-box;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .food-card-div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
 }
+
+/* ===============================
+  CARD CONTENT
+   =============================== */
 
 .food-card-div-desc {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  padding: 0.5rem;
-  width: 100%;
+  padding: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .food-card-category {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background-color: var(--primary);
-  border-radius: var(--radius);
+  background: var(--primary);
   color: var(--light);
-  padding: 0.4rem 0.8rem;
-  margin-top: -15px; /* Lekkie przesunięcie na zdjęcie */
-  margin-bottom: 0.5rem;
+  border-radius: var(--radius);
+  padding: 4px 10px;
   align-self: flex-start;
-  z-index: 1;
+  margin-top: -18px;
 }
 
 .food-card-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  width: 100%;
-  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--text-heading);
-  margin: 0.5rem 0;
+  text-align: center;
 }
+
 .food-card-time-diff {
-  width: 90%;
   display: flex;
   justify-content: space-between;
-  text-align: center;
-  flex-direction: row;
+  font-size: 0.85rem;
   color: var(--text-muted);
-  font-size: 0.9rem;
   margin-top: auto;
 }
 
+/* ===============================
+  FOOTER
+   =============================== */
+
 footer {
-  display: flex;
-  margin: 0;
-  font-size: 12px;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--light);
-  width: 100%;
-  padding: 1rem;
+  background: var(--bg-card);
+  padding: var(--space-md);
+  text-align: center;
   border-radius: var(--radius);
+  font-size: 12px;
   color: var(--text-muted);
+  box-shadow: var(--shadow-light);
 }
