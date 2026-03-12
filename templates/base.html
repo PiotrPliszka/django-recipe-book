@@ -1,11 +1,42 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Slinotok.pl proste przepisy kulinarne">
+    <meta name="keywords" content="przepisy, gotowanie, obiady, pizza, desery">
+    <title>
+      {% block title %}
+        Slinotok.pl
+      {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static "header.css" %}">
+    <link rel="stylesheet" href="{% static "styles.css" %}">
+    <link rel="stylesheet" href="{% static "footer.css" %}">
+    {% block style %}
+    {% endblock style %}
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo-div">
+          <!-- Logo-->
+          <a href="{% url "index" %}" class="logo">
+            <h2 class="name">Slinotok.pl</h2>
+          </a>
+        </div>
+        <div class="logo-div-other">
+          <!-- Other elements -->
+          <a href="#" class="header-a">Przepisy</a>
+          <a href="#" class="header-a">O mnie</a>
+        </div>
+      </header>
+      {% block content %}
+      {% endblock content %}
+      <footer>
+        <p>Projek i kod: hinek | Powerd by Djangoo 💖</p>
+      </footer>
+    </div>
+  </body>
 </html>

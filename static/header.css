@@ -1,0 +1,49 @@
+/* ===============================
+  HEADER
+   =============================== */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: var(--space-md);
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: var(--space-md);
+}
+
+.name {
+  font-weight: 900;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--text-title);
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+
+.logo-div-other {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.header-a {
+  padding: 6px 12px;
+  text-decoration: none;
+  color: var(--text-body);
+  border-radius: var(--radius);
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+.header-a:hover {
+  background: var(--primary);
+  color: var(--light);
+}

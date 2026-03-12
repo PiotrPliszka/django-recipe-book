@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  /* ===============================
+    1. KOLORY BAZOWE
+     =============================== */
+
+  --primary: #e14f4f;
+  --primary-hover: #c73c3c;
+
+  --secondary: #f4b860;
+  --secondary-hover: #e6a64c;
+
+  --dark: #3a3a3a;
+  --light: #ffffff;
+
+  --off-white: #faf7f2;
+  --border-light: #e8e4df;
+
+  /* ===============================
+    2. TŁA
+     =============================== */
+
+  --bg-page: var(--off-white);
+  --bg-card: var(--light);
+  --bg-section-accent: #fff4e2;
+
+  /* ===============================
+    3. TEKST
+     =============================== */
+
+  --text-title: var(--primary);
+  --text-heading: #2d2d2d;
+  --text-body: #555;
+  --text-muted: #8c8c8c;
+  --text-on-accent: #ffffff;
+
+  /* ===============================
+    4. LINKI I PRZYCISKI
+     =============================== */
+
+  --link-color: var(--primary);
+  --link-hover-color: var(--primary-hover);
+
+  --btn-primary-bg: var(--primary);
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-bg: var(--primary-hover);
+
+  /* ===============================
+    5. UI
+     =============================== */
+
+  --radius: 18px;
+
+  --shadow-light: 0 4px 14px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.12);
+
+  /* ===============================
+    6. SPACING SYSTEM
+     =============================== */
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+}
+
+/* ===============================
+  GLOBAL
+   =============================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+/* ===============================
+  IMAGES
+   =============================== */
+
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===============================
+  CONTAINER
+   =============================== */
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}

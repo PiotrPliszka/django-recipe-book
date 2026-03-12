@@ -1,0 +1,67 @@
+/* ===============================
+  FOOD GRID
+   =============================== */
+
+.food-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+  width: 100%;
+}
+
+/* ===============================
+  FOOD CARD
+   =============================== */
+
+.food-card-div {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: all 0.25s ease;
+}
+
+.food-card-div:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ===============================
+  CARD CONTENT
+   =============================== */
+
+.food-card-div-desc {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  gap: var(--space-sm);
+}
+
+.food-card-category {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: var(--primary);
+  color: var(--light);
+  border-radius: var(--radius);
+  padding: 4px 10px;
+  align-self: flex-start;
+  margin-top: -18px;
+}
+
+.food-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  text-align: center;
+}
+
+.food-card-time-diff {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: auto;
+}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Slinotok.pl
+{% endblock title %}
+{% block style %}
+  <link rel="stylesheet" href="{% static "recipes/index.css" %}">
+  <link rel="stylesheet" href="{% static "recipes/foodCard.css" %}">
+{% endblock style %}
+{% block content %}
+  <main>
+    <div class="filter">
+      <!-- Filter -->
+      <h2>Na co masz ochotę?</h2>
+      <div class="filter-options">
+        <a href="#" class="filter-btn">Wszystko</a>
+        <a href="#" class="filter-btn">Dania główne</a>
+        <a href="#" class="filter-btn">Desery</a>
+        <a href="#" class="filter-btn">Zupy</a>
+        <a href="#" class="filter-btn">Śniadania</a>
+      </div>
+    </div>
+    <!-- Food Cards -->
+    {% include "recipes/includes/foodCard.html" %}
+  </main>
+{% endblock content %}
