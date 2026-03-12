@@ -1,0 +1,248 @@
+:root {
+  /* ===============================
+    1. KOLORY BAZOWE (Z LOGO)
+     =============================== */
+  --primary: #e14f4f; /* Koralowy/czerwony z nazwy i ikony */
+  --secondary: #fbcf8e; /* Złoty/żółty z błysków nad trzepaczką */
+  --dark: #4a4a4a; /* Ciemny grafit z tagu .pl i dopisku */
+  --light: #ffffff; /* Czysty biały na główne tło sekcji i kart */
+
+  /* ===============================
+    2. WARIANTY KOLORÓW I TŁA
+     =============================== */
+  --primary-hover: #c0392b; /* Ciemniejszy odcień primary dla najechania myszką */
+  --off-white: #faf8f5; /* Bardzo ciepły odcień bieli na ogólne tło strony (pozostałe 90%) */
+  --border-light: #e0e0e0; /* Subtelny szary na obramowania */
+  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.04); /* Delikatny cień na karty */
+
+  /* ===============================
+    3. ZASTOSOWANIE W UI (MAPOWANIE)
+    To są zmienne, których używasz w kodzie CSS!
+     =============================== */
+
+  /* --- TŁA (BACKGROUNDS) --- */
+  --bg-page: var(--off-white); /* Ogólne tło całej strony */
+  --bg-card: var(--light); /* Tło kart z przepisami, sekcji itp. */
+  --bg-section-accent: #fff9ee; /* Subtelny akcent tła (np. dla nagłówka kategorii) */
+
+  /* --- TEKST (TEXT) --- */
+  --text-title: var(--primary); /* Główny tytuł strony, logotyp */
+  --text-heading: #2d3436; /* Nagłówki sekcji (H1, H2) - ciemniejszy odcień dark */
+  --text-body: var(--dark); /* Główna treść przepisu, składniki */
+  --text-muted: #8c8c8c; /* Subtelniejszy tekst (podtytuły, daty) */
+  --text-on-accent: var(--light); /* Tekst na przyciskach i nagłówkach marki */
+
+  /* --- INTERAKTYWNE (LINKI & PRZYCISKI) --- */
+  --link-color: var(--primary);
+  --link-hover-color: var(--primary-hover);
+  --btn-primary-bg: var(--primary);
+  --btn-primary-text: var(--light);
+  --btn-primary-hover-bg: var(--primary-hover);
+
+  /* --- INNE (MISC) --- */
+  --radius: 20px; /* Zaokrąglenie rogów */
+}
+* {
+  margin: 0;
+}
+html {
+  font-family: Roboto, Arial;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: var(--bg-page);
+  color: var(--text-body);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+  gap: 0.3rem;
+  margin: 1rem;
+}
+header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: var(--radius);
+  width: 100%;
+  box-shadow: var(--shadow-light);
+  gap: 2rem;
+}
+.name {
+  font-weight: 900;
+}
+.logo-div-other {
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  min-width: 20%;
+  font-weight: 700;
+  flex-wrap: wrap;
+}
+.header-a {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: var(--dark);
+  border-radius: var(--radius);
+  transition:
+    color 0.4s ease,
+    background-color 0.4s ease;
+}
+.header-a:hover {
+  color: var(--light);
+  background-color: var(--primary);
+  border-radius: var(--radius);
+}
+.logo {
+  text-decoration: none;
+  color: #e14f4f;
+  font-weight: 900;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: var(--radius);
+  background-color: var(--light);
+  box-shadow: var(--shadow-light);
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.filter-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.filter-btn {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: var(--dark);
+  border: 1px solid var(--border-light);
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  transition:
+    transform 0.4s ease,
+    background-color 0.4s ease;
+}
+
+.filter-btn:hover {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  transform: translateY(-3px);
+}
+
+.food-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+.food-card-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  width: 100%;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  box-sizing: border-box;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.food-card-div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.food-card-div-desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.food-card-category {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: var(--primary);
+  border-radius: var(--radius);
+  color: var(--light);
+  padding: 0.4rem 0.8rem;
+  margin-top: -15px; /* Lekkie przesunięcie na zdjęcie */
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+  z-index: 1;
+}
+
+.food-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  color: var(--text-heading);
+  margin: 0.5rem 0;
+}
+.food-card-time-diff {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  flex-direction: row;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+footer {
+  display: flex;
+  margin: 0;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light);
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--radius);
+  color: var(--text-muted);
+}

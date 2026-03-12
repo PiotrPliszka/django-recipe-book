@@ -1,0 +1,42 @@
+# =========================
+# macOS (Specyficzne dla Maca)
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Środowisko wirtualne (BARDZO WAŻNE)
+# =========================
+venv/
+env/
+.venv/
+
+# =========================
+# Django
+# =========================
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Pliki wgrywane przez użytkowników (jeśli kiedyś dodasz taką opcję)
+media/
+
+# =========================
+# Zmienne środowiskowe i klucze (Bezpieczeństwo!)
+# =========================
+.env
+
+# =========================
+# Edytory kodu (np. VS Code, PyCharm)
+# =========================
+.vscode/
+.idea/
