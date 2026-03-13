@@ -23,7 +23,7 @@ class Recipe(models.Model):
         ("Hard", "Ciężkie"),
     ]
     food_name = models.CharField(max_length=100)
-    description = models.TextField(null=False, default=None)
+    description = models.TextField(null=True)
     instructions = models.TextField(null=False)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     # Wiele składników do wielu przepisów
