@@ -13,9 +13,9 @@
       <!-- Filter -->
       <h2>Na co masz ochotę?</h2>
       <div class="filter-options">
-        <a href="#" class="filter-btn">Wszystko</a>
-        <a href="#" class="filter-btn">Dania główne</a>
-        <a href="#" class="filter-btn">Desery</a>
+        <a href="{% url "index" %}" class="filter-btn">Wszystko</a>
+        <a href="{% url "category" slug="main" %}" class="filter-btn">Dania główne</a>
+        <a href="{% url "category" slug="dessert" %}" class="filter-btn">Desery</a>
         <a href="#" class="filter-btn">Zupy</a>
         <a href="#" class="filter-btn">Śniadania</a>
       </div>
