@@ -5,14 +5,14 @@
     </div>
     <div class="food-card-div-desc">
       <div>
-        <p class="food-card-category">Dania główne</p>
+        <p class="food-card-category">{{ element.get_category_display }}</p>
       </div>
       <div class="food-card-title">
-        <h4>Domowa Pizza Margherita</h4>
+        <h4>{{ element.food_name }}</h4>
       </div>
       <div class="food-card-time-diff">
-        <p>🕐 45min</p>
-        <p>🧑🏻‍🍳 easy</p>
+        <p>🕐 {{ element.preparation_time }}</p>
+        <p>🧑🏻‍🍳 {{ element.get_difficulty_display }}</p>
       </div>
     </div>
   </div>

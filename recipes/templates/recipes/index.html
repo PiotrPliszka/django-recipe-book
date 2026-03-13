@@ -21,6 +21,8 @@
       </div>
     </div>
     <!-- Food Cards -->
-    {% include "recipes/includes/foodCard.html" %}
+    {% for element in all_recipes %}
+      {% include "recipes/includes/foodCard.html" %}
+    {% endfor %}
   </main>
 {% endblock content %}
