@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Slinotok.pl
+{% endblock title %}
+{% block style %}
+  <link rel="stylesheet" href="{% static "recipes/about.css" %}">
+{% endblock style %}
+{% block content %}
+  <div class="about-content">
+    <h1>Cześć! 👋</h1>
+    <p>
+      Mam na imię Hinek i stworzyłem tę stronę głównie w celach edukacyjnych.
+      Projekt powstał, aby nauczyć się pracy z frameworkiem Django oraz
+      sprawdzić swoje możliwości w tworzeniu pełnej aplikacji webowej.
+    </p>
+    <p>
+      Podczas budowy strony skupiałem się na połączeniu backendu Django
+      z własnym projektem interfejsu użytkownika. Dzięki temu mogłem
+      przećwiczyć tworzenie modeli, widoków, szablonów oraz logiki
+      obsługującej przepisy kulinarne.
+    </p>
+    <p>
+      Strona jest także miejscem do eksperymentowania z designem,
+      strukturą aplikacji oraz rozwijania umiejętności programistycznych.
+      Każdy przepis jest przykładem danych przechowywanych w bazie
+      i wyświetlanych dynamicznie w aplikacji.
+    </p>
+  </div>
+{% endblock content %}

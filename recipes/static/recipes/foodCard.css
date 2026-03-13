@@ -83,3 +83,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.food-detils-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
