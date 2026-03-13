@@ -23,6 +23,7 @@ class Recipe(models.Model):
         ("Hard", "Ciężkie"),
     ]
     food_name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="recpies/images", null=True, blank=True)
     description = models.TextField(null=True)
     instructions = models.TextField(null=False)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
