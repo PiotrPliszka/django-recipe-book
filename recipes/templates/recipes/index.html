@@ -16,15 +16,21 @@
         <a href="{% url "index" %}" class="filter-btn">Wszystko</a>
         <a href="{% url "category" slug="main" %}" class="filter-btn">Dania główne</a>
         <a href="{% url "category" slug="dessert" %}" class="filter-btn">Desery</a>
-        <a href="#" class="filter-btn">Zupy</a>
-        <a href="#" class="filter-btn">Śniadania</a>
+        <a href="{% url "category" slug="soup" %}" class="filter-btn">Zupy</a>
+        <a href="{% url "category" slug="snack" %}" class="filter-btn">Śniadania</a>
       </div>
     </div>
     <!-- Food Cards -->
-    <div class="food-card-grid">
-      {% for element in all_recipes %}
-        {% include "recipes/includes/foodCard.html" %}
-      {% endfor %}
-    </div>
+    {% if all_recipes %}
+      <div class="food-card-grid">
+        {% for element in all_recipes %}
+          {% include "recipes/includes/foodCard.html" %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="error">
+        <h1 class="error-msg">Przepraszamy obecnie nie ma przepisu spełnaiącego twoje oczekiwania</h1>
+      </div>
+    {% endif %}
   </main>
 {% endblock content %}

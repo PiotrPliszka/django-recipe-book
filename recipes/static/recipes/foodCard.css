@@ -68,3 +68,18 @@
   color: var(--text-muted);
   margin-top: auto;
 }
+
+.error {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 30vh;
+}
+
+.error-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
