@@ -20,4 +20,4 @@ def aboutMe(request):
 
 
 def foodDetails(request, slug):
-    pass
+    return render(request, "recipes/foodDetails.html")
