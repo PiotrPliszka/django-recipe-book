@@ -20,4 +20,6 @@ def aboutMe(request):
 
 
 def foodDetails(request, slug):
-    return render(request, "recipes/foodDetails.html")
+    all_recipes = Recipe.objects.all()
+    sluged = all_recipes.get(slug=slug)
+    return render(request, "recipes/foodDetails.html", {"recipe": sluged})

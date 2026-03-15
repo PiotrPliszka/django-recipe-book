@@ -1,10 +1,48 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-  Slinotok.pl
+  {{ recipe.food_name }} - Slinotok.pl
 {% endblock title %}
 {% block style %}
-  <link rel="stylesheet" href="{% static "recipes/about.css" %}">
+  <link rel="stylesheet" href="{% static "recipes/foodDetails.css" %}">
 {% endblock style %}
 {% block content %}
+  <main class="recipe-detail-container">
+    <article class="recipe-detail">
+      <header class="recipe-header">
+        <h1>{{ recipe.food_name }}</h1>
+        <div class="recipe-meta">
+          <span class="meta-item">
+            <strong>Czas przygotowania:</strong> {{ recipe.preparation_time }}
+          </span>
+          <span class="meta-item">
+            <strong>Poziom trudności:</strong> {{ recipe.get_difficulty_display }}
+          </span>
+        </div>
+      </header>
+      <div class="recipe-body">
+        <div class="recipe-image-container">
+          {% if recipe.image %}
+            <img src="{{ recipe.image.url }}"
+                 alt="Zdjęcie przepisu: {{ recipe.food_name }}">
+          {% endif %}
+        </div>
+        <div class="recipe-content">
+          <section class="recipe-ingredients">
+            <h2>Składniki</h2>
+            <ul>
+              {% for item in recipe.recipeingredients_set.all %}
+                <li>{{ item.ingredient.char }}: {{ item.amount }} {{ item.get_unit_display }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          <section class="recipe-instructions">
+            <h2>Przygotowanie</h2>
+            <br>
+            {{ recipe.instructions|linebreaksbr }}
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
 {% endblock content %}
