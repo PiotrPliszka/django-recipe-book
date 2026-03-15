@@ -41,10 +41,6 @@ class Recipe(models.Model):
     def __str__(self):
         return self.food_name
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.food_name)
-        super().save(*args, **kwargs)
-
 
 class RecipeIngredients(models.Model):
     UNIT_CHOICES = [
