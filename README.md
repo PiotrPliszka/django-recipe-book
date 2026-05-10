@@ -45,16 +45,16 @@
 ## 📸 Screenshots
 
 **Home Page**
-![Home Page](docs/HomePAge.png)
+![Home Page](docs/HomePage.jpg)
 
 **Recipe List**
-![Recipe List](docs/List.png)
+![Recipe List](docs/List.jpg)
 
 **Recipe Details**
-![Recipe Details](docs/FoodDetails.png)
+![Recipe Details](docs/FoodDetails.jpg)
 
 **About**
-![About](docs/AboutMe.png)
+![About](docs/AboutMe.jpg)
 
 ---
 
